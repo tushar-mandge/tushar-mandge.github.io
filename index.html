@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Resume - [Your Name]</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            color: #0056b3;
+            margin-top: 25px;
+        }
+
+        .job-entry, .project-entry {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #eee;
+        }
+
+        .job-entry h3, .project-entry h3 {
+            margin: 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .job-entry p, .project-entry p {
+            margin: 3px 0;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+        
+        /* Style for the JavaScript interaction */
+        #contact-info button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #contact-info button:hover {
+            background-color: #218838;
+        }
+        
+        #hidden-contact {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+    </style>
+    </head>
+
+<body>
+    <div class="container">
+        
+        <header>
+            <h1>[Your Name]</h1>
+            <p>Software Developer | CI/CD Enthusiast | Docker Expert</p>
+            <div id="contact-info">
+                <p>Location: [City, Country]</p>
+                <button onclick="showContact()">Show Email/Phone</button>
+                <p id="hidden-contact" style="display: none;"></p>
+            </div>
+        </header>
+
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>Highly motivated developer with X years of experience in building and deploying scalable web applications. Proficient in JavaScript, Node.js, and modern DevOps practices using GitHub Actions and Docker.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="job-entry">
+                <h3>Senior Software Engineer</h3>
+                <p>Tech Corp Innovations | Jan 2022 - Present</p>
+                <ul>
+                    <li>Led the migration of legacy services to a containerized microservices architecture using Docker.</li>
+                    <li>Developed and maintained CI/CD pipelines in GitHub Actions, reducing deployment time by 40%.</li>
+                    <li>Mentored junior developers on best practices for testing and code quality (using Jest).</li>
+                </ul>
+            </div>
+            
+            <div class="job-entry">
+                <h3>Junior Developer</h3>
+                <p>Web Solutions Inc. | Jun 2019 - Dec 2021</p>
+                <ul>
+                    <li>Contributed to the development of five client-facing web portals.</li>
+                    <li>Implemented unit tests to ensure stability across front-end components.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <p><strong>Languages:</strong> JavaScript, Python, HTML5, CSS3</p>
+            <p><strong>Frameworks/Libraries:</strong> React, Node.js, Express, Jest</p>
+            <p><strong>DevOps:</strong> Docker, Kubernetes (Basics), GitHub Actions, Git</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <p><strong>Bachelor of Technology in Computer Science</strong></p>
+            <p>University Name | 2015 - 2019</p>
+        </section>
+
+    </div>
+
+    <script>
+        /**
+         * Function to reveal hidden contact information (Email/Phone)
+         * This uses basic DOM manipulation, a core JS concept.
+         */
+        function showContact() {
+            const contactElement = document.getElementById('hidden-contact');
+            const buttonElement = document.querySelector('#contact-info button');
+
+            // Set the contact details
+            contactElement.textContent = "Email: your.name@example.com | Phone: (123) 456-7890";
+            
+            // Toggle visibility
+            if (contactElement.style.display === 'none') {
+                contactElement.style.display = 'block';
+                buttonElement.textContent = 'Hide Contact Info';
+            } else {
+                contactElement.style.display = 'none';
+                buttonElement.textContent = 'Show Email/Phone';
+            }
+        }
+    </script>
+    </body>
+</html>
